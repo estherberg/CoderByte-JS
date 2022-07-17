@@ -4,34 +4,32 @@
 
 
 
-function StringChallenge(str)
-{
+function StringChallenge(str) {
+    let array = str.toString().split();
+    let str2;
+    for (let i = 0; i < array.length; i++) {
 
-    for (let i = 0; i < str.length; i++)
-    {
+     
 
-        // Remplacez chaque lettre de la chaîne par la lettre qui la suit dans l'alphabet
-        // (c'est-à-dire que c devient d, z devient a).
-        if ((str[i] > 'a') && (str[i] < 'z'))
-        {
-            str[i]++;
-          
+        let letter = String.fromCharCode(array[i].charCodeAt(array.length - 1) + 1);
+        str2 += letter;
 
-          //  2) Afficher les voyelles en majuscule
+         // console.log("array[i]:",array[i]);
+        console.log("letter[i]:",letter[i]);
+        // console.log("str2[i]:",str2[i]);
 
-            if ((str[i] == 'a') || (str[i] == 'e') || (str[i] == 'i') || (str[i] == 'o') || (str[i] == 'u'))
-            {
-                str[i] = str[i] - 'a' + 'A';
-                // cout << putchar(toupper(str[i]))<<endl;
-            }
+        if (array[i] == "a" && array[i] == "e" && array[i] == "i" && array[i] == "o" && array[i] == "u") {
+            let letter = String.fromCharCode(array[i].charCodeAt(str.length - 1) + 1).toUpperCase();
+            str2 += letter;
         }
-     }
-
-    return str;
     }
 
 
+    console.log("str2 :",str2);
+}
 
-    let str = ["fun times!"];
 
-    console.log(StringChallenge);
+let str = ['fun times!'];
+
+console.log("StringChallenge(str):",StringChallenge(str));
+// console.log(str);
